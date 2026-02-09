@@ -1,0 +1,47 @@
+:root {
+    --bg: #0a0a0a;
+    --card: rgba(255, 255, 255, 0.03);
+    --accent: #d4af37; /* Champagne Gold */
+    --text: #f0f0f0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.profile { grid-column: span 2; grid-row: span 2; }
+.interaction { grid-column: span 2; grid-row: span 2; }
+.data-viewer { grid-column: span 4; }
+
+/* The Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    margin: 15px 0;
+}
+#progress-bar { width: 0%; height: 100%; background: var(--accent); transition: 0.5s; }
